@@ -112,6 +112,7 @@ def get_device_type_tartarus(self):
     self.logger.debug("DBus call get_device_type")
     return 'tartarus'
 
+
 @endpoint('razer.device.misc', 'getDeviceType', out_sig='s')
 def get_device_type_orbweaver(self):
     """
@@ -122,6 +123,19 @@ def get_device_type_orbweaver(self):
     """
     self.logger.debug("DBus call get_device_type")
     return 'orbweaver'
+
+
+@endpoint('razer.device.misc', 'getDeviceType', out_sig='s')
+def get_device_type_nostromo(self):
+    """
+    Get the device's type
+
+    :return:'tartarus'
+    :rtype: str
+    """
+    self.logger.debug("DBus call get_device_type")
+    return 'nostromo'
+
 
 @endpoint('razer.device.misc', 'getDeviceType', out_sig='s')
 def get_device_type_headset(self):

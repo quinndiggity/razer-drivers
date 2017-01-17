@@ -1433,6 +1433,12 @@ static int razer_kbd_probe(struct hid_device *hdev, const struct hid_device_id *
                 CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_profile_led_green);             // Profile/Macro LED Green
                 CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_profile_led_blue);              // Profile/Macro LED Blue
                 break;
+                
+            case USB_DEVICE_ID_RAZER_NOSTROMO:
+                CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_profile_led_red);               // Profile/Macro LED Red
+                CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_profile_led_green);             // Profile/Macro LED Green
+                CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_profile_led_blue);              // Profile/Macro LED Blue
+                break;
             
             case USB_DEVICE_ID_RAZER_ORBWEAVER:
                 CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_matrix_effect_static);          // Static effect
@@ -1628,6 +1634,12 @@ static void razer_kbd_disconnect(struct hid_device *hdev)
                 device_remove_file(&hdev->dev, &dev_attr_profile_led_blue);              // Profile/Macro LED Blue
                 break;
             
+            case USB_DEVICE_ID_RAZER_NOSTROMO:
+                device_remove_file(&hdev->dev, &dev_attr_profile_led_red);               // Profile/Macro LED Red
+                device_remove_file(&hdev->dev, &dev_attr_profile_led_green);             // Profile/Macro LED Green
+                device_remove_file(&hdev->dev, &dev_attr_profile_led_blue);              // Profile/Macro LED Blue
+                break;
+            
             case USB_DEVICE_ID_RAZER_ORBWEAVER:
                 device_remove_file(&hdev->dev, &dev_attr_matrix_effect_static);          // Static effect
 	            device_remove_file(&hdev->dev, &dev_attr_matrix_effect_pulsate);         // Pulsate effect, like breathing
@@ -1700,6 +1712,7 @@ static void razer_kbd_disconnect(struct hid_device *hdev)
  * Device ID mapping table
  */
 static const struct hid_device_id razer_devices[] = {
+    { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_NOSTROMO) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_ORBWEAVER) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_BLACKWIDOW_ORIGINAL) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_BLACKWIDOW_ULTIMATE_2012) },

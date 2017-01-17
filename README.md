@@ -63,6 +63,7 @@ Also this is the master branch, devices may appear in the tables below but might
 | Device                  | USB VID:PID | Driver | Daemon |
 | ----------------------- | ----------- | ------ | ------ |
 | Razer Chroma Mug Holder |  1532:0F07  |   ✔    |   ✔    |
+| Razer Nostromo          |  1532:0111  |   ✔    |   ✔    |
 | Razer Tartarus Chroma   |  1532:0208  |   ✔    |   ✔    |
 | Razer Orbweaver         |  1532:0113  |   ✔    |   ✔    |
 

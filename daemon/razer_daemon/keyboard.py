@@ -104,6 +104,8 @@ ORBWEAVER_KEY_MAPPING = {
     '20': (3, 4)
 }
 
+NOSTROMO_KEY_MAPPING = {}
+
 # Naga hex buttons are normal 1-7 keys
 #      0 1 2 3 4
 #   --------------
@@ -190,6 +192,8 @@ ORBWEAVER_EVENT_MAPPING = {
     106: 'RIGHT',
     108: 'DOWN',
 }
+
+NOSTROMO_EVENT_MAPPING = {}
 
 NAGA_HEX_V2_EVENT_MAPPING = {
     2: '1',  3: '2',  4: '3',  5: '4',  6: '5',  7: '6',  8: '7'
