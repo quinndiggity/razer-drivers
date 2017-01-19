@@ -264,6 +264,10 @@ static ssize_t razer_attr_read_device_type(struct device *dev, struct device_att
     switch (usb_dev->descriptor.idProduct)
     {
 		case USB_DEVICE_ID_RAZER_ORBWEAVER:
+			device_type = "Razer Nostromo\n";
+            break;
+		
+		case USB_DEVICE_ID_RAZER_ORBWEAVER:
 			device_type = "Razer Orbweaver\n";
             break;
 		
