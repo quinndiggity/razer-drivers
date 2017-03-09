@@ -1174,6 +1174,7 @@ static ssize_t razer_attr_write_device_mode(struct device *dev, struct device_at
     }
 
     report = razer_chroma_standard_set_device_mode(buf[0], buf[1]);
+    report.transaction_id.id = 0x3F;
 	razer_send_payload(usb_dev, &report);
 
 out:
@@ -1190,7 +1191,10 @@ static ssize_t razer_attr_read_device_mode(struct device *dev, struct device_att
 	struct usb_interface *intf = to_usb_interface(dev->parent);
 	struct usb_device *usb_dev = interface_to_usbdev(intf);
 	struct razer_report report = razer_chroma_standard_get_device_mode();
-	struct razer_report response = razer_send_payload(usb_dev, &report);
+	struct razer_report response;
+	
+	report.transaction_id.id = 0x3F;
+	response = razer_send_payload(usb_dev, &report);
 	
 	return sprintf(buf, "%d:%d\n", response.arguments[0], response.arguments[1]);
 }
