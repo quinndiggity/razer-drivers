@@ -1169,9 +1169,9 @@ static ssize_t razer_attr_write_device_mode(struct device *dev, struct device_at
         goto out;
     }
 
-    if (is_blade_laptop(usb_dev)) {
-        goto out;
-    }
+    //if (is_blade_laptop(usb_dev)) {
+        //goto out;
+    //}
 
     report = razer_chroma_standard_set_device_mode(buf[0], buf[1]);
     report.transaction_id.id = 0x3F;
